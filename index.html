@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-Friendly Calendar App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            margin-bottom: 20px;
+        }
+        .calendar-day {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+        .calendar-day.selected {
+            background-color: #e0e0ff;
+        }
+        .calendar-day.other-month {
+            color: #999;
+        }
+        .task-list {
+            margin-bottom: 20px;
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+        .color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .navigation button {
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        input[type="text"] {
+            width: calc(100% - 80px);
+            padding: 10px;
+            margin-right: 10px;
+        }
+        @media (max-width: 600px) {
+            .calendar-day {
+                padding: 3px;
+                font-size: 0.7em;
+            }
+            .buttons button, .navigation button {
+                padding: 8px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>My Calendar App</h1>
+    
+    <div class="buttons">
+        <button onclick="setActiveCalendar('default')" style="background-color: #3498db; color: white;">Default</button>
+        <button onclick="setActiveCalendar('work')" style="background-color: #e74c3c; color: white;">Work</button>
+        <button onclick="setActiveCalendar('personal')" style="background-color: #2ecc71; color: white;">Personal</button>
+    </div>
+
+    <div class="navigation">
+        <button onclick="changeMonth(-1)">&lt; Prev</button>
+        <span id="currentMonth"></span>
+        <button onclick="changeMonth(1)">Next &gt;</button>
+    </div>
+
+    <div class="navigation">
+        <button onclick="changeWeek(-1)">&lt; Prev</button>
+        <span id="currentWeek"></span>
+        <button onclick="changeWeek(1)">Next &gt;</button>
+    </div>
+
+    <div id="calendar" class="calendar"></div>
+
+    <div>
+        <input type="text" id="newTask" placeholder="Add a new task">
+        <button onclick="addTask()">Add</button>
+    </div>
+
+    <div id="taskList" class="task-list"></div>
+
+    <div class="buttons">
+        <button onclick="alert('Setting alarm...')">Alarm</button>
+        <button onclick="alert('Setting reminder...')">Reminder</button>
+        <button onclick="alert('Adding image...')">Image</button>
+        <button onclick="alert('Customizing...')">Customize</button>
+        <button onclick="alert('Adding sticker...')">Sticker</button>
+    </div>
+
+    <script>
+        // ... (previous JavaScript code remains the same) ...
+    </script>
+</body>
+</html>
+add calendar app HTML
